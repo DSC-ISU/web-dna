@@ -1,56 +1,57 @@
 import Head from 'next/head'
-import Content from './main.mdx'
 import Link from 'next/link'
+import About from './about.mdx'
+
 import { FaGithub } from 'react-icons/fa';
 import { AiFillInfoCircle } from 'react-icons/ai';
 
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Web DNA</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+        <div className="container">
+            <Head>
+                <title>Web DNA</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://github.com/DSC-ISU/web-dna">Web DNA</a>
-        </h1>
+            <main>
+                <h1 className="title">
+                    About the <Link href="/"><a>Web DNA</a></Link> Team
+                </h1>
 
-        <div className="flex-container">
-          <aside>
-            <div className="sidebar">
-              <a href="https://github.com/DSC-ISU/web-dna">
-                <FaGithub size="3em" style={{ width: "100%", margin: "auto" }} />
-              </a>
-              <a href="https://dsc.community.dev/iowa-state-university/">
-                <img src="dsc.png" alt="dsc" width="100%" style={{ "margin": "1rem 0rem" }} />
-              </a>
-              <Link href="/about">
-                <a>
-                  <AiFillInfoCircle size="3em" style={{ marginTop: "1rem", width: "100%", margin: "auto" }} />
+                <div className="flex-container">
+                    <aside>
+                        <div className="sidebar">
+                            <a href="https://github.com/DSC-ISU/web-dna">
+                                <FaGithub size="3em" style={{ width: "100%", margin: "auto" }} />
+                            </a>
+                            <a href="https://dsc.community.dev/iowa-state-university/">
+                                <img src="dsc.png" alt="dsc" width="100%" style={{ "margin": "1rem 0rem" }} />
+                            </a>
+                            <Link href="/about">
+                                <a>
+                                    <AiFillInfoCircle size="3em" style={{ width: "100%", margin: "auto" }} />
+                                </a>
+                            </Link>
+                        </div>
+                    </aside>
+
+                    <div className="content">
+                        <About />
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <a
+                    href="https://dsc.community.dev/iowa-state-university/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Built with ♥ by DSC@ISU
                 </a>
-              </Link>
-            </div>
-          </aside>
+            </footer>
 
-          <div className="content">
-            <Content />
-          </div>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://dsc.community.dev/iowa-state-university/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Built with ♥ by DSC@ISU
-        </a>
-      </footer>
-
-      <style jsx>{`
+            <style jsx>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -140,7 +141,7 @@ export default function Home() {
         }
       `}</style>
 
-      <style jsx global>{`
+            <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -154,6 +155,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
-  )
+        </div>
+    )
 }
